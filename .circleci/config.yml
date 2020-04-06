@@ -12,10 +12,10 @@ jobs:
           path: ~/project
       - run:
           name: Install python requirements
-          command: pip3 install -r requirements.txt -t `pwd`
+          command: cd lang/python && pip3 install -r requirements.txt -t `pwd`
       - run:
           name: Run tests
-          command: python3 -m unittest
+          command: cd lang/python && python3 -m unittest
   deploy:
     docker:
       - image: python:buster
@@ -24,7 +24,7 @@ jobs:
           path: ~/project
       - run:
           name: Install python requirements
-          command: pip3 install -r requirements.txt -t `pwd`
+          command: cd lang/python && pip3 install -r requirements.txt -t `pwd`
       - run:
           name: Deploy Code
           command: printf "Dummy deployment to $ENV_NAME"

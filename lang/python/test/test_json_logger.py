@@ -4,7 +4,7 @@ import unittest
 class TestStringMethods(unittest.TestCase):
     """ Dummy unit tests for now"""
     # TODO: fix unittests
-    
+
     def test_upper(self):
         self.assertEqual('foo'.upper(), 'FOO')
 
